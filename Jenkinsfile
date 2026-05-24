@@ -17,7 +17,7 @@ pipeline{
         }
            }
            }
-           }
+           
            
     stage('Deploy code to nginx server'){
       steps{
