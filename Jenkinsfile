@@ -12,9 +12,8 @@ pipeline{
         if(fileExists('index.html'))
           sh "grep -q '</html>' index.html"
           echo'validation is successfull'
-        else {
-          error'fatal error'
-        }
+        else error'fatal error'
+        
            }
            }
            
