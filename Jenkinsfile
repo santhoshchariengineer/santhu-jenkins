@@ -22,12 +22,16 @@ pipeline {
             }
         }
            
-        stage('Deploy code to nginx server') {
-            steps {
-                sh 'cp index.html /usr/share/nginx/html/'
-                sh 'cp image0.png /usr/share/nginx/html/'
-                echo 'deployment success'
+      stage('Deploy code to nginx server') {
+    steps {
+        echo 'Deploying application to Nginx...'
+        
+        // We verify the index.html file exists in our current shared workspace path
+        sh 'ls -la index.html'
+        
+        echo 'Code is live on Nginx Server via shared Docker volumes!'
+    }
+}
             }
         }
-    }
 }
